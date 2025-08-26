@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Powerhouse Crackers - Order Now | Diwali 2025</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="logo">
+                    <div class="logo__circle">
+                        <span class="logo__text">P</span>
+                    </div>
+                    <div class="logo__brand">
+                        <h1>POWERHOUSE CRACKERS</h1>
+                        <p>PRICELIST 2025 DIWALI - ADVANCE BOOKING STARTED</p>
+                    </div>
+                </div>
+                
+                <div class="header__actions">
+                    <div class="search-bar">
+                        <input type="text" id="searchInput" placeholder="Search products..." class="search-bar__input">
+                        <button class="search-bar__button">🔍</button>
+                    </div>
+                    
+                    <div class="cart-icon" id="cartIcon">
+                        🛒 <span class="cart-count" id="cartCount">0</span>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <h2 class="hero__title">🎆 DIWALI 2025 SPECIAL 🎆</h2>
+                <p class="hero__subtitle">ADVANCE BOOKING STARTED - 50% OFF on All Products!</p>
+                <p class="hero__tagline">100% Green Crackers | Government Guided ECO Friendly</p>
+                <div class="hero__features">
+                    <span class="hero__feature">✅ Free Delivery</span>
+                    <span class="hero__feature">✅ Premium Quality</span>
+                    <span class="hero__feature">✅ Eco-Friendly</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Filters -->
+    <section class="filters">
+        <div class="container">
+            <div class="filter-tabs">
+                <button class="filter-tab filter-tab--active" data-category="all">All Products</button>
+                <button class="filter-tab" data-category="SPARKLERS">Sparklers</button>
+                <button class="filter-tab" data-category="FLOWERPOTS">Flowerpots</button>
+                <button class="filter-tab" data-category="GROUND CHAKKARS">Ground Chakkars</button>
+                <button class="filter-tab" data-category="MULTICOLOR SHOTS">Multicolor Shots</button>
+                <button class="filter-tab" data-category="GIFT BOXES">Gift Boxes</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <div class="container">
+            <div id="productGrid" class="product-grid">
+                <!-- Products will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-sidebar__header">
+            <h3>Shopping Cart</h3>
+            <button class="cart-close" id="cartClose">&times;</button>
+        </div>
+        
+        <div class="cart-sidebar__content">
+            <div id="cartItems" class="cart-items">
+                <!-- Cart items will be populated by JavaScript -->
+            </div>
+            
+            <div class="cart-total">
+                <div class="cart-total__item">
+                    <span>Subtotal:</span>
+                    <span id="cartSubtotal">₹0</span>
+                </div>
+                <div class="cart-total__item">
+                    <span>Discount:</span>
+                    <span id="cartDiscount">₹0</span>
+                </div>
+                <div class="cart-total__item cart-total__final">
+                    <span>Total:</span>
+                    <span id="cartTotal">₹0</span>
+                </div>
+            </div>
+            
+            <button class="btn btn--primary btn--full-width" id="checkoutBtn">Proceed to Order</button>
+        </div>
+    </div>
+
+    <!-- Order Modal -->
+    <div class="modal hidden" id="orderModal">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+            <div class="modal__header">
+                <h3>Complete Your Order</h3>
+                <button class="modal__close" id="orderModalClose">&times;</button>
+            </div>
+            
+            <div class="modal__body">
+                <form id="orderForm" class="order-form">
+                    <div class="form-section">
+                        <h4>Customer Details</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="customerName">Full Name *</label>
+                                <input type="text" class="form-control" id="customerName" name="customerName" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="customerPhone">Phone Number *</label>
+                                <input type="tel" class="form-control" id="customerPhone" name="customerPhone" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="customerEmail">Email Address</label>
+                            <input type="email" class="form-control" id="customerEmail" name="customerEmail">
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h4>Delivery Information</h4>
+                        <div class="form-group">
+                            <label class="form-label" for="deliveryAddress">Complete Address *</label>
+                            <textarea class="form-control" id="deliveryAddress" name="deliveryAddress" rows="3" required></textarea>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="city">City *</label>
+                                <input type="text" class="form-control" id="city" name="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="pincode">Pincode *</label>
+                                <input type="text" class="form-control" id="pincode" name="pincode" required>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h4>Payment Method</h4>
+                        <div class="payment-options">
+                            <label class="payment-option">
+                                <input type="radio" name="paymentMethod" value="googlepay" checked>
+                                <div class="payment-option__content">
+                                    <span class="payment-option__icon">📱</span>
+                                    <div class="payment-option__details">
+                                        <strong>Google Pay</strong>
+                                        <span>Pay to: 9894866459</span>
+                                    </div>
+                                </div>
+                            </label>
+                            
+                            <label class="payment-option">
+                                <input type="radio" name="paymentMethod" value="bank">
+                                <div class="payment-option__content">
+                                    <span class="payment-option__icon">🏦</span>
+                                    <div class="payment-option__details">
+                                        <strong>Bank Transfer</strong>
+                                        <span>Powerhouse Crackers SBI Bank</span>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="order-summary">
+                        <h4>Order Summary</h4>
+                        <div id="orderSummaryItems" class="order-summary__items">
+                            <!-- Order summary will be populated by JavaScript -->
+                        </div>
+                        <div class="order-summary__total">
+                            <div class="order-summary__row">
+                                <span>Items Total:</span>
+                                <span id="orderItemsTotal">₹0</span>
+                            </div>
+                            <div class="order-summary__row">
+                                <span>Discount:</span>
+                                <span id="orderDiscount">-₹0</span>
+                            </div>
+                            <div class="order-summary__row order-summary__final">
+                                <span>Final Total:</span>
+                                <span id="orderFinalTotal">₹0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn--primary btn--full-width">Place Order</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__main">
+                    <div class="footer__brand">
+                        <div class="logo">
+                            <div class="logo__circle">
+                                <span class="logo__text">P</span>
+                            </div>
+                            <div class="logo__brand">
+                                <h3>POWERHOUSE CRACKERS</h3>
+                                <p>Premium Quality Eco-Friendly Fireworks</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="footer__info">
+                        <div class="footer__section">
+                            <h4>Contact Us</h4>
+                            <div class="contact-item">📞 +91 9894866459</div>
+                            <div class="contact-item">📧 powerhousecrackers@gmail.com</div>
+                            <div class="contact-item">📍 173 Raja Street, Coimbatore 641001</div>
+                        </div>
+                        
+                        <div class="footer__section">
+                            <h4>Payment Options</h4>
+                            <div class="contact-item">📱 Google Pay: 9894866459</div>
+                            <div class="contact-item">🏦 SBI Bank</div>
+                            <div class="contact-item">Account: 33261312190</div>
+                            <div class="contact-item">IFSC: SBIN0000990</div>
+                        </div>
+                        
+                        <div class="footer__section">
+                            <h4>Important Notes</h4>
+                            <div class="contact-item">✅ Free transport office delivery available</div>
+                            <div class="contact-item">📞 We will call you once your estimate order is placed</div>
+                            <div class="contact-item">❌ Cash on delivery not available</div>
+                            <div class="contact-item">🌱 100% Green Crackers only</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer__bottom">
+                    <p>&copy; 2025 Powerhouse Crackers. All rights reserved. | Government guided ECO friendly mixture of chemicals</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
