@@ -68,7 +68,7 @@ function showOrderSuccess(orderId, total) {
             <div style="background: rgba(255,255,255,0.2); padding: 15px; border-radius: 5px; margin: 20px 0;">
                 <h3>Next Steps:</h3>
                 <p>📞 We will call you shortly to confirm your order</p>
-                <p>💳 Complete payment using Google Pay: 9894866459</p>
+                <p>💳 Complete payment using Google Pay: 7904399942</p>
                 <p>📧 Check your email for order confirmation</p>
             </div>
             <button onclick="closeOrderSuccess()" style="

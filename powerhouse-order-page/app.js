@@ -3,7 +3,7 @@ const productData = {
     "company_name": "POWERHOUSE CRACKERS",
     "tagline": "PRICELIST 2025 DIWALI - ADVANCE BOOKING STARTED",
     "phone": "+91 7904399942",
-    "email": "powerhousecrackers@gmail.com",
+    "email": "powerhouse.org.in@gmail.com",
     "address": "173 Raja Street, Coimbatore 641001",
     "payment_info": {
         "google_pay": "7904399942",

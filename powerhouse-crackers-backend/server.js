@@ -124,7 +124,7 @@ function createBusinessEmailTemplate(order) {
           <h3>Action Required:</h3>
           <ol>
             <li>Contact customer at ${order.customer.phone} to confirm order</li>
-            <li>Verify payment (Google Pay: 9894866459 or Bank Transfer)</li>
+            <li>Verify payment (Google Pay: 7904399942 or Bank Transfer)</li>
             <li>Arrange delivery to ${order.customer.address}</li>
             <li>Update order status</li>
           </ol>
@@ -174,7 +174,7 @@ function createCustomerEmailTemplate(order) {
 
         <div style="background: #d4edda; border: 1px solid #c3e6cb; padding: 15px; border-radius: 5px; margin: 20px 0;">
           <h3>Payment Instructions:</h3>
-          <p><strong>Google Pay:</strong> 9894866459</p>
+          <p><strong>Google Pay:</strong> 7904399942</p>
           <p><strong>Bank Transfer:</strong></p>
           <ul>
             <li>Account Name: Powerhouse Crackers SBI Bank</li>
@@ -182,7 +182,7 @@ function createCustomerEmailTemplate(order) {
             <li>IFSC Code: SBIN0000990</li>
             <li>Branch: CBE City Branch</li>
           </ul>
-          <p><strong>Note:</strong> Please send payment screenshot to +91 9894866459 after payment.</p>
+          <p><strong>Note:</strong> Please send payment screenshot to +91 7904399942 after payment.</p>
         </div>
 
         <div style="background: #fff3cd; border: 1px solid #ffeaa7; padding: 15px; border-radius: 5px; margin: 20px 0;">
@@ -197,8 +197,8 @@ function createCustomerEmailTemplate(order) {
 
         <div style="text-align: center; margin-top: 30px; color: #666;">
           <p><strong>Contact Us:</strong></p>
-          <p>📞 +91 9894866459 | ✉️ powerhousecrackers@gmail.com</p>
-          <p>📍 173 Raja Street, Coimbatore 641001</p>
+          <p>📞 +91 7904399942 | ✉️ powerhouse.org.in@gmail.com</p>
+      
         </div>
       </div>
     </div>
