@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
     
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
             // Get form elements
@@ -195,31 +195,133 @@ document.addEventListener('DOMContentLoaded', function() {
                     input.style.borderColor = '#FF6B35';
                 }
             });
-            action="https://formspree.io/f/mayvlkna" 
-            method="POST"
-            // Simulate form submission
+
+            // Button loading state
             const submitButton = this.querySelector('button[type="submit"]');
             const originalText = submitButton.textContent;
-            
             submitButton.textContent = 'Submitting...';
             submitButton.disabled = true;
 
-            // Simulate API call
-            setTimeout(() => {
-                showNotification('Thank you! We will call you soon to discuss your Powerhouse Crackers requirements.', 'success');
-                this.reset();
-                // Reset field styles
-                [nameInput, phoneInput, locationSelect].forEach(input => {
-                    if (input) {
-                        input.style.borderColor = '#FF6B35';
-                    }
+            // Build JSON payload
+            const formData = {
+                name: nameInput.value.trim(),
+                phone: phoneInput.value.trim(),
+                location: locationSelect.value,
+                requirements: requirementsTextarea.value.trim()
+            };
+
+            try {
+                const response = await fetch("https://formspree.io/f/xqadkyan", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(formData)
                 });
-                submitButton.textContent = originalText;
-                submitButton.disabled = false;
-            }, 1500);
+
+                if (response.ok) {
+                    showNotification('✅ Thank you! We will call you soon to discuss your Powerhouse Crackers requirements.', 'success');
+                    this.reset();
+                } else {
+                    showNotification('⚠️ Failed to send your request. Please try again later.', 'error');
+                }
+            } catch (err) {
+                showNotification('🚨 Network error! Please check your connection.', 'error');
+            }
+
+            // Reset button
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
         });
     }
 });
+
+// document.addEventListener('DOMContentLoaded', function() {
+//     const contactForm = document.getElementById('contactForm');
+    
+//     if (contactForm) {
+//         contactForm.addEventListener('submit', function(e) {
+//             e.preventDefault();
+            
+//             // Get form elements
+//             const nameInput = document.getElementById('name');
+//             const phoneInput = document.getElementById('phone');
+//             const locationSelect = document.getElementById('location');
+//             const requirementsTextarea = document.getElementById('requirements');
+            
+//             // Clear previous error styles
+//             [nameInput, phoneInput, locationSelect].forEach(input => {
+//                 if (input) {
+//                     input.style.borderColor = '#FF6B35';
+//                 }
+//             });
+
+//             // Validate form
+//             let isValid = true;
+//             const errors = [];
+
+//             if (!nameInput.value.trim()) {
+//                 nameInput.style.borderColor = '#DC143C';
+//                 errors.push('Name is required');
+//                 isValid = false;
+//             }
+
+//             if (!phoneInput.value.trim()) {
+//                 phoneInput.style.borderColor = '#DC143C';
+//                 errors.push('Phone number is required');
+//                 isValid = false;
+//             } else {
+//                 // Validate phone number (basic validation for 10 digits)
+//                 const phoneDigits = phoneInput.value.replace(/\D/g, '');
+//                 if (phoneDigits.length !== 10) {
+//                     phoneInput.style.borderColor = '#DC143C';
+//                     errors.push('Please enter a valid 10-digit phone number');
+//                     isValid = false;
+//                 }
+//             }
+
+//             if (!locationSelect.value) {
+//                 locationSelect.style.borderColor = '#DC143C';
+//                 errors.push('Please select a delivery location');
+//                 isValid = false;
+//             }
+
+//             if (!isValid) {
+//                 showNotification(errors.join('. '), 'error');
+//                 return;
+//             }
+
+//             // Mark valid fields
+//             [nameInput, phoneInput, locationSelect].forEach(input => {
+//                 if (input && input.value.trim()) {
+//                     input.style.borderColor = '#FF6B35';
+//                 }
+//             });
+//             action="https://formspree.io/f/mayvlkna" 
+//             method="POST"
+//             // Simulate form submission
+//             const submitButton = this.querySelector('button[type="submit"]');
+//             const originalText = submitButton.textContent;
+            
+//             submitButton.textContent = 'Submitting...';
+//             submitButton.disabled = true;
+
+//             // Simulate API call
+//             setTimeout(() => {
+//                 showNotification('Thank you! We will call you soon to discuss your Powerhouse Crackers requirements.', 'success');
+//                 this.reset();
+//                 // Reset field styles
+//                 [nameInput, phoneInput, locationSelect].forEach(input => {
+//                     if (input) {
+//                         input.style.borderColor = '#FF6B35';
+//                     }
+//                 });
+//                 submitButton.textContent = originalText;
+//                 submitButton.disabled = false;
+//             }, 1500);
+//         });
+//     }
+// });
 
 // Real-time form validation
 document.addEventListener('DOMContentLoaded', function() {

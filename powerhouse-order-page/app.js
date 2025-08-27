@@ -1,3 +1,9 @@
+const coupons = {
+    PR20: 20,
+    PR10: 10,
+    PR5: 5
+};
+
 // Product data from Powerhouse Crackers
 const productData = {
   "SPARKLERS": [
@@ -438,6 +444,7 @@ function updateCartDisplay() {
 // Update cart summary
 function updateCartSummary() {
     const subtotalEl = document.getElementById('subtotal');
+    const deliverCharge = document.getElementById('deliveryCharges');
     const originalPriceEl = document.getElementById('originalPrice');
     const savingsEl = document.getElementById('savings');
     const totalPriceEl = document.getElementById('totalPrice');
@@ -447,11 +454,11 @@ function updateCartSummary() {
     const subtotal = cart.reduce((sum, item) => sum + (item.discountPrice * item.quantity), 0);
     const originalTotal = cart.reduce((sum, item) => sum + (item.actualPrice * item.quantity), 0);
     const savings = originalTotal - subtotal;
-    
+    const totalAmount=subtotal+(deliverCharge ? parseInt(deliverCharge.textContent.replace('₹', '')) : 0);
     subtotalEl.textContent = `₹${subtotal}`;
     originalPriceEl.textContent = `₹${originalTotal}`;
     savingsEl.textContent = `₹${savings}`;
-    totalPriceEl.textContent = `₹${subtotal}`;
+    totalPriceEl.textContent = totalAmount;
 }
 
 // Update cart item quantity
@@ -533,29 +540,120 @@ function closeCheckout() {
 }
 
 // Update checkout summary
+// function updateCheckoutSummary() {
+//     const checkoutItems = document.getElementById('checkoutItems');
+//     const checkoutItemCount = document.getElementById('checkoutItemCount');
+//     const checkoutTotal = document.getElementById('checkoutTotal');
+//     const deliverCharge = document.getElementById('deliveryCharges');
+//     if (!checkoutItems || !checkoutItemCount || !checkoutTotal) return;
+    
+//     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+//     const totalAmount = cart.reduce((sum, item) => sum + (item.discountPrice * item.quantity), 0);
+//     const totalAmountWithDeliveryCharge = totalAmount + (deliverCharge ? parseInt(deliverCharge.textContent.replace('₹', '')) : 0); // Assuming a fixed delivery charge of ₹50
+//     checkoutItems.innerHTML = cart.map(item => `
+//         <div class="checkout-item">
+//             <span>${item.name} (${item.quantity}x)</span>
+//             <span>₹${item.discountPrice * item.quantity}</span>
+//         </div>
+//     `).join('');
+    
+//     const couponInput = document.getElementById('coupon');
+// if (couponInput) {
+//     const code = couponInput.value.trim().toUpperCase(); // read entered code
+
+//     if (coupons.hasOwnProperty(code)) {
+//         const discountPercent = coupons[code];
+//         const discount = Math.round((discountPercent / 100) * totalAmount);
+
+//         totalAmountWithDeliveryCharge -= discount;
+
+//         showNotification(`🎉 Coupon applied! You saved ₹${discount}`, 'success');
+//     } else if (code !== "") {
+//         showNotification('❌ Invalid coupon code', 'error');
+//     }
+// }
+//     checkoutItemCount.textContent = totalItems;
+//     checkoutTotal.textContent = `₹${totalAmountWithDeliveryCharge}`;
+// }
+
+// Track order count (persist in localStorage so refresh doesn’t reset)
+let orderCount = parseInt(localStorage.getItem("orderCount")) || 0;
+const maxCouponOrders = 5; // Only first 5 orders can use coupons
+
+// Event listener for coupon input
+const couponInput = document.getElementById("coupon");
+if (couponInput) {
+    couponInput.addEventListener("input", () => {
+        updateCheckoutSummary();
+    });
+}
+
 function updateCheckoutSummary() {
     const checkoutItems = document.getElementById('checkoutItems');
     const checkoutItemCount = document.getElementById('checkoutItemCount');
     const checkoutTotal = document.getElementById('checkoutTotal');
-    
+    const deliveryChargeElem = document.getElementById('deliveryCharges');
+    const couponMessage = document.getElementById('couponMessage');
+
     if (!checkoutItems || !checkoutItemCount || !checkoutTotal) return;
-    
+
+    // Cart totals
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
     const totalAmount = cart.reduce((sum, item) => sum + (item.discountPrice * item.quantity), 0);
-    
+
+    // Delivery charge
+    const deliveryCharge = deliveryChargeElem 
+        ? parseInt(deliveryChargeElem.textContent.replace('₹', '')) || 0 
+        : 0;
+
+    let totalAmountWithDeliveryCharge = totalAmount + deliveryCharge;
+
+    // Coupon handling
+    const code = couponInput.value.trim().toUpperCase();
+    couponMessage.textContent = ""; // clear old msg
+
+    if (code && coupons.hasOwnProperty(code)) {
+        if (orderCount < maxCouponOrders) { 
+            const discountPercent = coupons[code];
+            const discount = Math.round((discountPercent / 100) * totalAmount);
+
+            totalAmountWithDeliveryCharge -= discount;
+
+            couponMessage.textContent = `🎉 Coupon applied! You saved ₹${discount}`;
+            couponMessage.style.color = "green";
+        } else {
+            couponMessage.textContent = `❌ Coupon limit reached (only first ${maxCouponOrders} orders get discount)`;
+            couponMessage.style.color = "red";
+        }
+    }
+
+    // Update DOM
     checkoutItems.innerHTML = cart.map(item => `
         <div class="checkout-item">
             <span>${item.name} (${item.quantity}x)</span>
             <span>₹${item.discountPrice * item.quantity}</span>
         </div>
     `).join('');
-    
+
     checkoutItemCount.textContent = totalItems;
-    checkoutTotal.textContent = `₹${totalAmount}`;
+    checkoutTotal.textContent = `₹${totalAmountWithDeliveryCharge}`;
 }
 
+// When order is placed successfully
+function completeOrder() {
+    orderCount++;
+    localStorage.setItem("orderCount", orderCount); // persist
+    showNotification("✅ Order placed successfully!", "success");
+
+    // clear cart etc.
+}
 // Handle order submission
-function handleOrder(e) {
+// const checkoutForm = document.getElementById('checkoutForm');
+if (checkoutForm) {
+    checkoutForm.addEventListener('submit', handleOrder);
+}
+
+async function handleOrder(e) {
     e.preventDefault();
     
     const customerName = document.getElementById('customerName').value.trim();
@@ -572,55 +670,67 @@ function handleOrder(e) {
         deliveryAddress,
         deliveryState,
         paymentMethod,
-        items: [...cart],
+        items: [...cart],  // assumes cart is globally available
         totalAmount: cart.reduce((sum, item) => sum + (item.discountPrice * item.quantity), 0),
         orderDate: new Date().toISOString()
     };
     
-    // Validate required fields
+    // ✅ Validate required fields
     if (!customerName || !customerPhone || !deliveryAddress || !deliveryState || !paymentMethod) {
         showNotification('Please fill all required fields', 'error');
         return;
     }
     
-    // Validate phone number
+    // ✅ Validate phone number
     const phoneDigits = customerPhone.replace(/\D/g, '');
     if (!validatePhone(phoneDigits)) {
         showNotification('Please enter a valid 10-digit phone number', 'error');
         return;
     }
     
-    // Validate email if provided
+    // ✅ Validate email (optional)
     if (customerEmail && !validateEmail(customerEmail)) {
         showNotification('Please enter a valid email address', 'error');
         return;
     }
     
-    // Simulate order processing
+    // ✅ Submit button state
     const submitBtn = e.target.querySelector('button[type="submit"]');
     if (!submitBtn) return;
     
     const originalText = submitBtn.textContent;
-    
     submitBtn.textContent = 'Processing Order...';
     submitBtn.disabled = true;
     
-    setTimeout(() => {
-        showNotification('Order placed successfully! We will call you soon for confirmation and payment details.', 'success');
-        
-        // Clear cart and close modal
-        cart = [];
-        updateCartDisplay();
-        closeCart();
-        closeCheckout();
-        
-        // Reset form
-        e.target.reset();
-        
-        // Reset button
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    }, 2000);
+    try {
+        // ✅ Send order to Formspree
+        const response = await fetch("https://formspree.io/f/xqadkyan", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(orderData)
+        });
+
+        if (response.ok) {
+            showNotification('✅ Order placed successfully! We will call you soon for confirmation and payment details.', 'success');
+            
+            // Clear cart & close modal
+            cart = [];
+            updateCartDisplay();
+            closeCart();
+            closeCheckout();
+            
+            // Reset form
+            e.target.reset();
+        } else {
+            showNotification('⚠️ Failed to place order. Please try again.', 'error');
+        }
+    } catch (err) {
+        showNotification('🚨 Network error. Please check your connection.', 'error');
+    }
+    
+    // ✅ Reset button
+    submitBtn.textContent = originalText;
+    submitBtn.disabled = false;
 }
 
 // Notification system

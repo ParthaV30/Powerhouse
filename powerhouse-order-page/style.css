@@ -1239,6 +1239,9 @@ body {
 .summary-row.discount {
   color: var(--powerhouse-orange);
 }
+.summary-row.deliveryCharge {
+  color: var(--powerhouse-orange);
+}
 
 .summary-row.total {
   font-weight: var(--font-weight-bold);

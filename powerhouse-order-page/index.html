@@ -101,6 +101,10 @@
                     <span>You Save:</span>
                     <span id="savings">₹0</span>
                 </div>
+                <div class="summary-row deliveryCharge">
+                    <span>Delivery Charge:</span>
+                    <span id="deliveryCharges">₹50</span>
+                </div>
                 <div class="summary-row total">
                     <span>Total:</span>
                     <span id="totalPrice">₹0</span>
@@ -119,22 +123,22 @@
                 <button class="modal-close" id="modalClose">&times;</button>
             </div>
             <div class="modal-body">
-                <form class="checkout-form" id="checkoutForm">
+                <form class="checkout-form" id="checkoutForm" action="https://formspree.io/f/xqadkyan" method="POST">
                     <div class="form-group">
                         <label class="form-label" for="customerName">Full Name *</label>
-                        <input type="text" class="form-control" id="customerName" required>
+                        <input type="text" class="form-control" id="customerName" required placeholder="Enter your full name">
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="customerPhone">Phone Number *</label>
-                        <input type="tel" class="form-control" id="customerPhone" required>
+                        <input type="tel" class="form-control" id="customerPhone" required placeholder="Enter your phone number">
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="customerEmail">Email</label>
-                        <input type="email" class="form-control" id="customerEmail">
+                        <input type="email" class="form-control" id="customerEmail" placeholder="Enter your email (optional)">
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="deliveryAddress">Delivery Address *</label>
-                        <textarea class="form-control" id="deliveryAddress" rows="3" required></textarea>
+                        <textarea class="form-control" id="deliveryAddress" rows="3" required placeholder="Enter Address"></textarea>
                     </div>
                     <div class="form-group">
                         <label class="form-label" for="deliveryState">State *</label>
@@ -157,6 +161,11 @@
                             <option value="bank-transfer">Bank Transfer</option>
                         </select>
                     </div>
+                    <div class="form-group">
+                        <label class="form-label" for="coupon">Apply Coupon</label>
+                        <input type="text" class="form-control" id="coupon" placeholder="Enter coupon code">
+                        <p id="couponMessage" style="color: green; font-size: 14px;"></p>
+                    </div>
                     <div class="payment-note">
                         <p><strong>Note:</strong> Cash on delivery is not available. Payment must be made via Google Pay or Bank Transfer before delivery.</p>
                     </div>
@@ -168,6 +177,10 @@
                                 <span>Total Items:</span>
                                 <span id="checkoutItemCount">0</span>
                             </div>
+                            <div class="summary-row deliveryCharge">
+                             <span>Delivery Charge:</span>
+                            <span id="deliveryCharges">₹50</span>
+                             </div>
                             <div class="summary-row total">
                                 <span>Total Amount:</span>
                                 <span id="checkoutTotal">₹0</span>
