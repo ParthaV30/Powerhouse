@@ -195,7 +195,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     input.style.borderColor = '#FF6B35';
                 }
             });
-
+            action="https://formspree.io/f/mayvlkna" 
+            method="POST"
             // Simulate form submission
             const submitButton = this.querySelector('button[type="submit"]');
             const originalText = submitButton.textContent;

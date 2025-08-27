@@ -1,630 +1,626 @@
-// Product Data
+// Product data from Powerhouse Crackers
 const productData = {
-    "company_name": "POWERHOUSE CRACKERS",
-    "tagline": "PRICELIST 2025 DIWALI - ADVANCE BOOKING STARTED",
-    "phone": "+91 7904399942",
-    "email": "powerhouse.org.in@gmail.com",
-    "address": "173 Raja Street, Coimbatore 641001",
-    "payment_info": {
-        "google_pay": "7904399942",
-        "bank": {
-            "name": "Powerhouse Crackers SBI Bank",
-            "branch": "CBE City Branch",
-            "account": "33261312190",
-            "ifsc": "SBIN0000990"
-        }
-    },
-    "categories": [
-        {
-            "name": "SPARKLERS",
-            "products": [
-                {"name": "BOBY GOLD SPARKLERS 7CM(10pcs)", "content": "1Box", "actual_price": 42, "discount_price": 21},
-                {"name": "BOBBY CRACKLINGS SPARKLERS 7CM(10PCS)", "content": "1BOX", "actual_price": 48, "discount_price": 24},
-                {"name": "12CM 4 COLOUR SPARKLERS (10PCS)", "content": "1BOX", "actual_price": 100, "discount_price": 50},
-                {"name": "12CM RED SPARKLERS (10PCS)", "content": "1BOX", "actual_price": 108, "discount_price": 54},
-                {"name": "LEMON TREE SPARKLERS 15CM(10PCS)", "content": "1BOX", "actual_price": 150, "discount_price": 75},
-                {"name": "RED SPARKLERS 15CM(10PCS)", "content": "1BOX", "actual_price": 166, "discount_price": 83},
-                {"name": "GOLD SPARKLERS 15CM(10PCS)", "content": "1BOX", "actual_price": 176, "discount_price": 88},
-                {"name": "GOLD SPARKLERS 30CM(5PCS)", "content": "1BOX", "actual_price": 176, "discount_price": 88},
-                {"name": "CRACKLING SPARKLERS 15CM(10PCS)", "content": "1BOX", "actual_price": 198, "discount_price": 99},
-                {"name": "CRACKLING SPARKLERS 30CM(5PCS)", "content": "1BOX", "actual_price": 198, "discount_price": 99},
-                {"name": "LAVENDER SPARKLERS 15CM(10PCS)", "content": "1BOX", "actual_price": 208, "discount_price": 104},
-                {"name": "ROBIN ELECTRIC SPARKLERS 50CM(5PCS)", "content": "1TUBE", "actual_price": 420, "discount_price": 210},
-                {"name": "ROBIN COLOUR SPARKLERS 50CM(5PCS)", "content": "1TUBE", "actual_price": 480, "discount_price": 240},
-                {"name": "TRI COLOUR 15CM(30PCS)", "content": "1BOX", "actual_price": 522, "discount_price": 261},
-                {"name": "ROBIN(5IN1) COLOUR SPARKLERS 75CM(5PCS)", "content": "1 TUBE", "actual_price": 750, "discount_price": 375}
-            ]
-        },
-        {
-            "name": "FLOWERPOTS",
-            "products": [
-                {"name": "LITTLE FLOWER (1PC)", "content": "1BOX", "actual_price": 148, "discount_price": 74},
-                {"name": "THE GREAT SPLENDOUR FOUNTAIN (1PC)", "content": "1BOX", "actual_price": 172, "discount_price": 86},
-                {"name": "FLOWERPOT SMALL(10PCS)", "content": "1Box", "actual_price": 192, "discount_price": 96},
-                {"name": "JET FOUNTAIN (5PCS)", "content": "1BOX", "actual_price": 212, "discount_price": 106},
-                {"name": "FLOWERPOTS BIG(10PCS)", "content": "1BOX", "actual_price": 348, "discount_price": 174},
-                {"name": "JET FOUNTAINS (10PCS)", "content": "1 BOX", "actual_price": 400, "discount_price": 200},
-                {"name": "FLOWERPOTS SPECIAL (10PCS)", "content": "1BOX", "actual_price": 466, "discount_price": 233},
-                {"name": "CHEERS FOUNTAIN (3PCS)", "content": "1BOX", "actual_price": 474, "discount_price": 237},
-                {"name": "FLOWERPOTS DELUXE (5PCS)", "content": "1BOX", "actual_price": 622, "discount_price": 311},
-                {"name": "JEWEL POTS FOUNTAIN (5PCS)", "content": "1BOX", "actual_price": 648, "discount_price": 324},
-                {"name": "JADE FLOWERS FOUNTAIN(5PCS)", "content": "1BOX", "actual_price": 664, "discount_price": 332},
-                {"name": "HAPPINESS FOUNTAIN (5PCS)", "content": "1BOX", "actual_price": 666, "discount_price": 333},
-                {"name": "SUNDROPS FOUNTAIN (5PCS)", "content": "1BOX", "actual_price": 676, "discount_price": 338},
-                {"name": "MONEY PENNY FOUNTAIN (5PCS)", "content": "1BOX", "actual_price": 676, "discount_price": 338},
-                {"name": "POPCORN FOUNTAIN (5PCS)", "content": "1BOX", "actual_price": 748, "discount_price": 374},
-                {"name": "LASER SHOW FOUNTAIN (3PCS)", "content": "1BOX", "actual_price": 862, "discount_price": 431},
-                {"name": "LAVENDER FOUNTAIN (3PCS)", "content": "1BOX", "actual_price": 876, "discount_price": 438},
-                {"name": "FLOWERPOTS GIANT (10PCS)", "content": "1BOX", "actual_price": 950, "discount_price": 475},
-                {"name": "Tricolour FOUNTAIN (5PCS)", "content": "1BOX", "actual_price": 956, "discount_price": 478},
-                {"name": "CRACKLING KING FOUNTAIN (5PCS)", "content": "1BOX", "actual_price": 1000, "discount_price": 500},
-                {"name": "COLOR FOUNTAINS (4PCS)", "content": "1BOX", "actual_price": 1004, "discount_price": 502},
-                {"name": "TRICOLOUR MILLENNIUM (5pcs)", "content": "1BOX", "actual_price": 1102, "discount_price": 551},
-                {"name": "FLOWERPOTS COLOUR WORLD (10PCS)", "content": "1BOX", "actual_price": 1116, "discount_price": 558},
-                {"name": "RED CINDERELLA (5PCS)", "content": "1BOX", "actual_price": 1132, "discount_price": 566},
-                {"name": "TOWER POTS GOLD(1PCS)", "content": "1BOX", "actual_price": 1720, "discount_price": 860}
-            ]
-        },
-        {
-            "name": "GROUND CHAKKARS",
-            "products": [
-                {"name": "ZAMIN CHAKKARS BIG(10PCS)", "content": "1Box", "actual_price": 134, "discount_price": 67},
-                {"name": "RED & WHITE CHAKKARS (10PCS)", "content": "1BOX", "actual_price": 148, "discount_price": 74},
-                {"name": "ZAMIN CHAKKARS ASOKA (10PCS)", "content": "1BOX", "actual_price": 224, "discount_price": 112},
-                {"name": "TWIN SPIN WHEEL (5PCS)", "content": "1BOX", "actual_price": 234, "discount_price": 117},
-                {"name": "SCARLET SAUCER(5PCS)", "content": "1 BOX", "actual_price": 234, "discount_price": 117},
-                {"name": "ZAMIN CHAKKARS BIG(25PCS)", "content": "1BOX", "actual_price": 306, "discount_price": 153},
-                {"name": "WHIZZ WHEEL (5PCS)", "content": "1BOX", "actual_price": 340, "discount_price": 170},
-                {"name": "MEGA TWISTER WHEEL(5PCS)", "content": "1BOX", "actual_price": 342, "discount_price": 171},
-                {"name": "ZAMIN CHAKKARS SPECIAL (10PCS)", "content": "1BOX", "actual_price": 382, "discount_price": 191},
-                {"name": "SCARY SCREAM(4PCS)", "content": "1BOX", "actual_price": 488, "discount_price": 244},
-                {"name": "ZAMIN CHAKKARS DELUXE (10PCS)", "content": "1BOX", "actual_price": 494, "discount_price": 247},
-                {"name": "ZAMIN CHAKKARS SUPER DELUXE (10PCS)", "content": "1BOX", "actual_price": 546, "discount_price": 273},
-                {"name": "DOLLAR WHEEL(5PCS)", "content": "1BOX", "actual_price": 690, "discount_price": 345},
-                {"name": "POKER WHEEL (5PCS)", "content": "1BOX", "actual_price": 692, "discount_price": 346},
-                {"name": "CUCKOO WHEEL (5PCS)", "content": "1BOX", "actual_price": 692, "discount_price": 346}
-            ]
-        },
-        {
-            "name": "MULTICOLOR SHOTS",
-            "products": [
-                {"name": "12 SHOTS FLIPPER", "content": "1Box", "actual_price": 458, "discount_price": 229},
-                {"name": "12 SHOTS BALEEN", "content": "1Box", "actual_price": 458, "discount_price": 229},
-                {"name": "20 SHOTS KISMET", "content": "1Box", "actual_price": 1650, "discount_price": 825},
-                {"name": "25 SHOTS ROVER", "content": "1Box", "actual_price": 1730, "discount_price": 865},
-                {"name": "30 SHOTS DTH", "content": "1Box", "actual_price": 1880, "discount_price": 940},
-                {"name": "40 SHOTS MARINER", "content": "1Box", "actual_price": 2350, "discount_price": 1175},
-                {"name": "60 SHOTS CLIPPER", "content": "1Box", "actual_price": 3140, "discount_price": 1570},
-                {"name": "80 SHOTS CYBORG", "content": "1Box", "actual_price": 4100, "discount_price": 2050},
-                {"name": "100 SHOTS SPEED METRO", "content": "1Box", "actual_price": 4600, "discount_price": 2300},
-                {"name": "120 SHOTS RIX", "content": "1Box", "actual_price": 5300, "discount_price": 2650},
-                {"name": "240 SHOTS RAINBOW DANCE", "content": "1Box", "actual_price": 12900, "discount_price": 6450}
-            ]
-        },
-        {
-            "name": "GIFT BOXES",
-            "products": [
-                {"name": "PRIZE 20 GIFTBOX", "content": "1Box", "actual_price": 1180, "discount_price": 590},
-                {"name": "GOD'S GIFT 25 GIFTBOX", "content": "1Box", "actual_price": 1580, "discount_price": 790},
-                {"name": "SUPER 28 GIFTBOX", "content": "1Box", "actual_price": 1700, "discount_price": 850},
-                {"name": "GREAT 31 GIFTBOX", "content": "1Box", "actual_price": 2100, "discount_price": 1050},
-                {"name": "WONDERFUL 34 GIFTBOX", "content": "1Box", "actual_price": 2500, "discount_price": 1250},
-                {"name": "FANTASTIC 37 GIFTBOX", "content": "1Box", "actual_price": 2860, "discount_price": 1430},
-                {"name": "KHUSHI 42 GIFTBOX", "content": "1Box", "actual_price": 3480, "discount_price": 1740},
-                {"name": "JUBILEE 46 GIFTBOX", "content": "1BOX", "actual_price": 3760, "discount_price": 1880},
-                {"name": "TITAN 55 GIFTBOX", "content": "1BOX", "actual_price": 5150, "discount_price": 2575},
-                {"name": "NEW PARADISE 27 GIFTBOX", "content": "1BOX", "actual_price": 9180, "discount_price": 4590}
-            ]
-        }
-    ]
+  "SPARKLERS": [
+    {"name": "BOBY GOLD SPARKLERS 7CM(10pcs)", "package": "1BOX", "actualPrice": 42, "discountPrice": 21, "image": "logo.jpg"},
+    {"name": "BOBBY CRACKLINGS SPARKLERS 7CM(10PCS)", "package": "1BOX", "actualPrice": 48, "discountPrice": 24, "image": "logo.jpg"},
+    {"name": "12CM 4 COLOUR SPARKLERS (10PCS)", "package": "1BOX", "actualPrice": 100, "discountPrice": 50, "image": "logo.jpg"},
+    {"name": "12CM RED SPARKLERS (10PCS)", "package": "1BOX", "actualPrice": 108, "discountPrice": 54, "image": "sparkler_red.jpg"},
+    {"name": "LEMON TREE SPARKLERS 15CM(10PCS)", "package": "1BOX", "actualPrice": 150, "discountPrice": 75, "image": "sparkler_lemon.jpg"},
+    {"name": "RED SPARKLERS 15CM(10PCS)", "package": "1BOX", "actualPrice": 166, "discountPrice": 83, "image": "sparkler_red15.jpg"},
+    {"name": "GOLD SPARKLERS 15CM(10PCS)", "package": "1BOX", "actualPrice": 176, "discountPrice": 88, "image": "sparkler_gold15.jpg"},
+    {"name": "GOLD SPARKLERS 30CM(5PCS)", "package": "1BOX", "actualPrice": 176, "discountPrice": 88, "image": "sparkler_gold30.jpg"},
+    {"name": "CRACKLING SPARKLERS 15CM(10PCS)", "package": "1BOX", "actualPrice": 198, "discountPrice": 99, "image": "sparkler_crackling15.jpg"},
+    {"name": "CRACKLING SPARKLERS 30CM(5PCS)", "package": "1BOX", "actualPrice": 198, "discountPrice": 99, "image": "sparkler_crackling30.jpg"},
+    {"name": "LAVENDER SPARKLERS 15CM(10PCS)", "package": "1BOX", "actualPrice": 208, "discountPrice": 104, "image": "sparkler_lavender.jpg"},
+    {"name": "ROBIN ELECTRIC SPARKLERS 50CM(5PCS)", "package": "1TUBE", "actualPrice": 420, "discountPrice": 210, "image": "sparkler_electric.jpg"},
+    {"name": "ROBIN COLOUR SPARKLERS 50CM(5PCS)", "package": "1TUBE", "actualPrice": 480, "discountPrice": 240, "image": "sparkler_color50.jpg"},
+    {"name": "TRI COLOUR 15CM(30PCS)", "package": "1BOX", "actualPrice": 522, "discountPrice": 261, "image": "sparkler_tricolor.jpg"},
+    {"name": "ROBIN(5IN1) COLOUR SPARKLERS 75CM(5PCS)", "package": "1TUBE", "actualPrice": 750, "discountPrice": 375, "image": "sparkler_5in1.jpg"}
+  ],
+  "FLOWERPOTS": [
+    {"name": "LITTLE FLOWER (1PC)", "package": "1BOX", "actualPrice": 148, "discountPrice": 74, "image": "flowerpot_little.jpg"},
+    {"name": "THE GREAT SPLENDOUR FOUNTAIN (1PC)", "package": "1BOX", "actualPrice": 172, "discountPrice": 86, "image": "fountain_splendour.jpg"},
+    {"name": "FLOWERPOT SMALL(10PCS)", "package": "1BOX", "actualPrice": 192, "discountPrice": 96, "image": "flowerpot_small.jpg"},
+    {"name": "JET FOUNTAIN (5PCS)", "package": "1BOX", "actualPrice": 212, "discountPrice": 106, "image": "fountain_jet.jpg"},
+    {"name": "FLOWERPOTS BIG(10PCS)", "package": "1BOX", "actualPrice": 348, "discountPrice": 174, "image": "flowerpot_big.jpg"},
+    {"name": "JET FOUNTAINS (10PCS)", "package": "1BOX", "actualPrice": 400, "discountPrice": 200, "image": "fountain_jet10.jpg"},
+    {"name": "FLOWERPOTS SPECIAL (10PCS)", "package": "1BOX", "actualPrice": 466, "discountPrice": 233, "image": "flowerpot_special.jpg"},
+    {"name": "CHEERS FOUNTAIN (3PCS)", "package": "1BOX", "actualPrice": 474, "discountPrice": 237, "image": "fountain_cheers.jpg"},
+    {"name": "FLOWERPOTS DELUXE (5PCS)", "package": "1BOX", "actualPrice": 622, "discountPrice": 311, "image": "flowerpot_deluxe.jpg"},
+    {"name": "JEWEL POTS FOUNTAIN (5PCS)", "package": "1BOX", "actualPrice": 648, "discountPrice": 324, "image": "fountain_jewel.jpg"},
+    {"name": "JADE FLOWERS FOUNTAIN(5PCS)", "package": "1BOX", "actualPrice": 664, "discountPrice": 332, "image": "fountain_jade.jpg"},
+    {"name": "HAPPINESS FOUNTAIN (5PCS)", "package": "1BOX", "actualPrice": 666, "discountPrice": 333, "image": "fountain_happiness.jpg"},
+    {"name": "SUNDROPS FOUNTAIN (5PCS)", "package": "1BOX", "actualPrice": 676, "discountPrice": 338, "image": "fountain_sundrops.jpg"},
+    {"name": "MONEY PENNY FOUNTAIN (5PCS)", "package": "1BOX", "actualPrice": 676, "discountPrice": 338, "image": "fountain_moneypenny.jpg"},
+    {"name": "POPCORN FOUNTAIN (5PCS)", "package": "1BOX", "actualPrice": 748, "discountPrice": 374, "image": "fountain_popcorn.jpg"},
+    {"name": "LASER SHOW FOUNTAIN (3PCS)", "package": "1BOX", "actualPrice": 862, "discountPrice": 431, "image": "fountain_laser.jpg"},
+    {"name": "LAVENDER FOUNTAIN (3PCS)", "package": "1BOX", "actualPrice": 876, "discountPrice": 438, "image": "fountain_lavender.jpg"},
+    {"name": "FLOWERPOTS GIANT (10PCS)", "package": "1BOX", "actualPrice": 950, "discountPrice": 475, "image": "flowerpot_giant.jpg"},
+    {"name": "Tricolour FOUNTAIN (5PCS)", "package": "1BOX", "actualPrice": 956, "discountPrice": 478, "image": "fountain_tricolor.jpg"},
+    {"name": "CRACKLING KING FOUNTAIN (5PCS)", "package": "1BOX", "actualPrice": 1000, "discountPrice": 500, "image": "fountain_crackling_king.jpg"},
+    {"name": "COLOR FOUNTAINS (4PCS)", "package": "1BOX", "actualPrice": 1004, "discountPrice": 502, "image": "fountain_color.jpg"},
+    {"name": "TRICOLOUR MILLENNIUM (5pcs)", "package": "1BOX", "actualPrice": 1102, "discountPrice": 551, "image": "fountain_millennium.jpg"},
+    {"name": "FLOWERPOTS COLOUR WORLD (10PCS)", "package": "1BOX", "actualPrice": 1116, "discountPrice": 558, "image": "flowerpot_colorworld.jpg"},
+    {"name": "RED CINDERELLA (5PCS)", "package": "1BOX", "actualPrice": 1132, "discountPrice": 566, "image": "fountain_cinderella.jpg"},
+    {"name": "TOWER POTS GOLD(1PCS)", "package": "1BOX", "actualPrice": 1720, "discountPrice": 860, "image": "flowerpot_tower_gold.jpg"}
+  ],
+  "GROUND CHAKKARS": [
+    {"name": "ZAMIN CHAKKARS BIG(10PCS)", "package": "1BOX", "actualPrice": 134, "discountPrice": 67, "image": "chakkar_big.jpg"},
+    {"name": "RED & WHITE CHAKKARS (10PCS)", "package": "1BOX", "actualPrice": 148, "discountPrice": 74, "image": "chakkar_redwhite.jpg"},
+    {"name": "ZAMIN CHAKKARS ASOKA (10PCS)", "package": "1BOX", "actualPrice": 224, "discountPrice": 112, "image": "chakkar_asoka.jpg"},
+    {"name": "TWIN SPIN WHEEL (5PCS)", "package": "1BOX", "actualPrice": 234, "discountPrice": 117, "image": "wheel_twinspin.jpg"},
+    {"name": "SCARLET SAUCER(5PCS)", "package": "1BOX", "actualPrice": 234, "discountPrice": 117, "image": "saucer_scarlet.jpg"},
+    {"name": "ZAMIN CHAKKARS BIG(25PCS)", "package": "1BOX", "actualPrice": 306, "discountPrice": 153, "image": "chakkar_big25.jpg"},
+    {"name": "WHIZZ WHEEL (5PCS)", "package": "1BOX", "actualPrice": 340, "discountPrice": 170, "image": "wheel_whizz.jpg"},
+    {"name": "MEGA TWISTER WHEEL(5PCS)", "package": "1BOX", "actualPrice": 342, "discountPrice": 171, "image": "wheel_twister.jpg"},
+    {"name": "ZAMIN CHAKKARS SPECIAL (10PCS)", "package": "1BOX", "actualPrice": 382, "discountPrice": 191, "image": "chakkar_special.jpg"},
+    {"name": "SCARY SCREAM(4PCS)", "package": "1BOX", "actualPrice": 488, "discountPrice": 244, "image": "wheel_scream.jpg"},
+    {"name": "ZAMIN CHAKKARS DELUXE (10PCS)", "package": "1BOX", "actualPrice": 494, "discountPrice": 247, "image": "chakkar_deluxe.jpg"},
+    {"name": "ZAMIN CHAKKARS SUPER DELUXE (10PCS)", "package": "1BOX", "actualPrice": 546, "discountPrice": 273, "image": "chakkar_superdeluxe.jpg"},
+    {"name": "DOLLAR WHEEL(5PCS)", "package": "1BOX", "actualPrice": 690, "discountPrice": 345, "image": "wheel_dollar.jpg"},
+    {"name": "POKER WHEEL (5PCS)", "package": "1BOX", "actualPrice": 692, "discountPrice": 346, "image": "wheel_poker.jpg"},
+    {"name": "CUCKOO WHEEL (5PCS)", "package": "1BOX", "actualPrice": 692, "discountPrice": 346, "image": "wheel_cuckoo.jpg"}
+  ],
+  "SOUND CRACKERS": [
+    {"name": "SPARROW6.5CM(5PCS)", "package": "1PKT", "actualPrice": 36, "discountPrice": 18, "image": "sound_sparrow.jpg"},
+    {"name": "9CM PEACOCK (5PCS)", "package": "1PKT", "actualPrice": 60, "discountPrice": 30, "image": "sound_peacock.jpg"},
+    {"name": "10CM LAKSHMI (5PCS)", "package": "1PKT", "actualPrice": 84, "discountPrice": 42, "image": "sound_lakshmi.jpg"},
+    {"name": "10CM KRISHNA (5PCS)", "package": "1PKT", "actualPrice": 84, "discountPrice": 42, "image": "sound_krishna.jpg"},
+    {"name": "10CM HITLER (5PCS)", "package": "1PKT", "actualPrice": 84, "discountPrice": 42, "image": "sound_hitler.jpg"},
+    {"name": "9CM TWO SOUND (5PCS)", "package": "1PKT", "actualPrice": 88, "discountPrice": 44, "image": "sound_twosound.jpg"},
+    {"name": "10CM HERCULES DELUXE(5PCS)", "package": "1PKT", "actualPrice": 108, "discountPrice": 54, "image": "sound_hercules.jpg"},
+    {"name": "TWO SOUND GIANT (5PCS)", "package": "1PKT", "actualPrice": 120, "discountPrice": 60, "image": "sound_twogiant.jpg"}
+  ],
+  "BIJILI": [
+    {"name": "BIJILI RED(50PCS)", "package": "1PKT", "actualPrice": 76, "discountPrice": 38, "image": "bijili_red.jpg"},
+    {"name": "GIANT BIJILI (50PCS)", "package": "1PKT", "actualPrice": 142, "discountPrice": 71, "image": "bijili_giant.jpg"},
+    {"name": "RED BIJILI (100PCS)", "package": "1PKT", "actualPrice": 146, "discountPrice": 73, "image": "bijili_red100.jpg"},
+    {"name": "STRIPPED BIJILI(100PCS)", "package": "1PKT", "actualPrice": 168, "discountPrice": 84, "image": "bijili_stripped.jpg"}
+  ],
+  "BOMBS": [
+    {"name": "BULLET BOMBS (10PCS)", "package": "1BOX", "actualPrice": 112, "discountPrice": 56, "image": "bomb_bullet.jpg"},
+    {"name": "HYDROGEN BOMBS (10PCS)", "package": "1BOX", "actualPrice": 230, "discountPrice": 115, "image": "bomb_hydrogen.jpg"},
+    {"name": "SILVER BOMB(10PCS)", "package": "1BOX", "actualPrice": 240, "discountPrice": 120, "image": "bomb_silver.jpg"},
+    {"name": "COLOUR FLASH (5PCS)", "package": "1BOX", "actualPrice": 244, "discountPrice": 122, "image": "bomb_colorflash.jpg"},
+    {"name": "ATOM BOMBS(10PCS)", "package": "1BOX", "actualPrice": 252, "discountPrice": 126, "image": "bomb_atom.jpg"},
+    {"name": "FANTASTIC SSS BOMB (6PCS)", "package": "1BOX", "actualPrice": 320, "discountPrice": 160, "image": "bomb_sss.jpg"},
+    {"name": "THUNDER BOMB (10PCS)", "package": "1BOX", "actualPrice": 322, "discountPrice": 161, "image": "bomb_thunder.jpg"},
+    {"name": "COLOUR BURST (10PCS)", "package": "1BOX", "actualPrice": 356, "discountPrice": 178, "image": "bomb_colorburst.jpg"},
+    {"name": "FLOWER BOMB (GANGA JAMUNA)(5PCS)", "package": "1BOX", "actualPrice": 360, "discountPrice": 180, "image": "bomb_flower.jpg"},
+    {"name": "KARGIL BULLET (10PCS)", "package": "1BOX", "actualPrice": 410, "discountPrice": 205, "image": "bomb_kargil.jpg"},
+    {"name": "BOOM (10PCS)", "package": "1BOX", "actualPrice": 434, "discountPrice": 217, "image": "bomb_boom.jpg"}
+  ],
+  "ROCKETS": [
+    {"name": "SURVEYOR ROCKETS(10PCS)", "package": "1BOX", "actualPrice": 196, "discountPrice": 98, "image": "rocket_surveyor.jpg"},
+    {"name": "RAINBOW ROCKETS (10PCS)", "package": "1BOX", "actualPrice": 324, "discountPrice": 162, "image": "rocket_rainbow.jpg"},
+    {"name": "BOMB ROCKET(10PCS)", "package": "1BOX", "actualPrice": 358, "discountPrice": 179, "image": "rocket_bomb.jpg"},
+    {"name": "SILVER JET ROCKETS ((10PCS)", "package": "1BOX", "actualPrice": 566, "discountPrice": 283, "image": "rocket_silverjet.jpg"},
+    {"name": "ROHINI ROCKETS (10PCS)", "package": "1BOX", "actualPrice": 568, "discountPrice": 284, "image": "rocket_rohini.jpg"},
+    {"name": "PARACHUTE ROCKETS (5PCS)", "package": "1BOX", "actualPrice": 1438, "discountPrice": 719, "image": "rocket_parachute.jpg"}
+  ],
+  "GIFT BOXES": [
+    {"name": "PRIZE 20 GIFTBOX", "package": "1BOX", "actualPrice": 1180, "discountPrice": 590, "image": "gift_prize20.jpg"},
+    {"name": "GOD'S GIFT 25 GIFTBOX", "package": "1BOX", "actualPrice": 1580, "discountPrice": 790, "image": "gift_gods25.jpg"},
+    {"name": "SUPER 28 GIFTBOX", "package": "1BOX", "actualPrice": 1700, "discountPrice": 850, "image": "gift_super28.jpg"},
+    {"name": "GREAT 31 GIFTBOX", "package": "1BOX", "actualPrice": 2100, "discountPrice": 1050, "image": "gift_great31.jpg"},
+    {"name": "WONDERFUL 34 GIFTBOX", "package": "1BOX", "actualPrice": 2500, "discountPrice": 1250, "image": "gift_wonderful34.jpg"},
+    {"name": "FANTASTIC 37 GIFTBOX", "package": "1BOX", "actualPrice": 2860, "discountPrice": 1430, "image": "gift_fantastic37.jpg"},
+    {"name": "KHUSHI 42 GIFTBOX", "package": "1BOX", "actualPrice": 3480, "discountPrice": 1740, "image": "gift_khushi42.jpg"},
+    {"name": "JUBILEE 46 GIFTBOX", "package": "1BOX", "actualPrice": 3760, "discountPrice": 1880, "image": "gift_jubilee46.jpg"},
+    {"name": "TITAN 55 GIFTBOX", "package": "1BOX", "actualPrice": 5150, "discountPrice": 2575, "image": "gift_titan55.jpg"},
+    {"name": "NEW PARADISE 27 GIFTBOX", "package": "1BOX", "actualPrice": 9180, "discountPrice": 4590, "image": "gift_paradise27.jpg"}
+  ]
 };
 
-// Global state
+// Global variables
 let cart = [];
+let currentProducts = [];
 let currentCategory = 'all';
-let searchTerm = '';
 
-// DOM Elements
-let productGrid, cartCount, cartSidebar, cartItems, cartSubtotal, cartDiscount, cartTotal;
-let orderModal, orderForm, searchInput, filterTabs, mobileMenuBtn;
-
-// Initialize application
+// Initialize the application
 document.addEventListener('DOMContentLoaded', function() {
-    initializeElements();
-    setupEventListeners();
-    renderProducts();
-    updateCartDisplay();
+    initializeApp();
 });
 
-function initializeElements() {
-    productGrid = document.getElementById('productGrid');
-    cartCount = document.getElementById('cartCount');
-    cartSidebar = document.getElementById('cartSidebar');
-    cartItems = document.getElementById('cartItems');
-    cartSubtotal = document.getElementById('cartSubtotal');
-    cartDiscount = document.getElementById('cartDiscount');
-    cartTotal = document.getElementById('cartTotal');
-    orderModal = document.getElementById('orderModal');
-    orderForm = document.getElementById('orderForm');
-    searchInput = document.getElementById('searchInput');
-    filterTabs = document.querySelectorAll('.filter-tab');
-    mobileMenuBtn = document.getElementById('mobileMenuBtn');
+function initializeApp() {
+    loadProducts();
+    setupEventListeners();
+    updateCartDisplay();
 }
 
+// Setup event listeners
 function setupEventListeners() {
     // Search functionality
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+    
     if (searchInput) {
         searchInput.addEventListener('input', handleSearch);
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                handleSearch();
+            }
+        });
+    }
+    
+    if (searchBtn) {
+        searchBtn.addEventListener('click', handleSearch);
     }
 
-    // Filter tabs
-    filterTabs.forEach(tab => {
-        tab.addEventListener('click', () => handleCategoryFilter(tab.dataset.category));
-    });
-
-    // Cart icon
-    const cartIcon = document.getElementById('cartIcon');
-    if (cartIcon) {
-        cartIcon.addEventListener('click', toggleCartSidebar);
-    }
-
-    // Cart close button
-    const cartClose = document.getElementById('cartClose');
-    if (cartClose) {
-        cartClose.addEventListener('click', closeCartSidebar);
-    }
-
-    // Checkout button
-    const checkoutBtn = document.getElementById('checkoutBtn');
-    if (checkoutBtn) {
-        checkoutBtn.addEventListener('click', openOrderModal);
-    }
-
-    // Order modal close
-    const orderModalClose = document.getElementById('orderModalClose');
-    if (orderModalClose) {
-        orderModalClose.addEventListener('click', closeOrderModal);
-    }
-
-    // Order form submission
-    if (orderForm) {
-        orderForm.addEventListener('submit', handleOrderSubmission);
-    }
-
-    // Modal overlay click to close
-    const modalOverlay = document.querySelector('.modal__overlay');
-    if (modalOverlay) {
-        modalOverlay.addEventListener('click', closeOrderModal);
-    }
-
-    // Mobile menu (if needed)
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-    }
-}
-
-function getAllProducts() {
-    let allProducts = [];
-    productData.categories.forEach(category => {
-        category.products.forEach(product => {
-            allProducts.push({
-                ...product,
-                category: category.name,
-                id: `${category.name}_${product.name}`.replace(/\s+/g, '_').toLowerCase()
-            });
+    // Category filtering
+    document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const category = this.dataset.category;
+            selectCategory(category);
         });
     });
-    return allProducts;
-}
 
-function getFilteredProducts() {
-    let products = getAllProducts();
-
-    // Apply search filter first
-    if (searchTerm) {
-        products = products.filter(product => 
-            product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            product.category.toLowerCase().includes(searchTerm.toLowerCase())
-        );
-        // If searching, ignore category filter to show all search results
-    } else if (currentCategory !== 'all') {
-        // Apply category filter only if no search term
-        products = products.filter(product => product.category === currentCategory);
+    // Sort functionality
+    const sortSelect = document.getElementById('sortSelect');
+    if (sortSelect) {
+        sortSelect.addEventListener('change', handleSort);
     }
 
-    return products;
-}
-
-function renderProducts() {
-    const products = getFilteredProducts();
+    // Cart functionality
+    const cartBtn = document.getElementById('cartBtn');
+    const cartClose = document.getElementById('cartClose');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    const clearCartBtn = document.getElementById('clearCartBtn');
     
-    if (!productGrid) return;
+    if (cartBtn) cartBtn.addEventListener('click', toggleCart);
+    if (cartClose) cartClose.addEventListener('click', closeCart);
+    if (checkoutBtn) checkoutBtn.addEventListener('click', openCheckout);
+    if (clearCartBtn) clearCartBtn.addEventListener('click', clearCart);
 
-    if (products.length === 0) {
-        productGrid.innerHTML = `
-            <div class="no-products" style="grid-column: 1 / -1; text-align: center; padding: 2rem; color: #666;">
-                <h3>No products found</h3>
-                <p>Try adjusting your search or filter criteria.</p>
-            </div>
-        `;
-        return;
+    // Modal functionality
+    const modalClose = document.getElementById('modalClose');
+    const overlay = document.getElementById('overlay');
+    
+    if (modalClose) modalClose.addEventListener('click', closeCheckout);
+    if (overlay) overlay.addEventListener('click', closeCheckout);
+
+    // Form submission
+    const checkoutForm = document.getElementById('checkoutForm');
+    if (checkoutForm) {
+        checkoutForm.addEventListener('submit', handleOrder);
     }
 
-    productGrid.innerHTML = products.map(product => createProductCard(product)).join('');
-    
-    // Add event listeners to quantity buttons and add to cart buttons
-    products.forEach(product => {
-        setupProductEventListeners(product.id);
+    // ESC key to close modal - Fixed implementation
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+            const modal = document.getElementById('checkoutModal');
+            if (modal && !modal.classList.contains('hidden')) {
+                closeCheckout();
+                console.log('Modal closed with Escape key'); // Debug log
+            }
+        }
+    });
+
+    // Close cart when clicking outside
+    document.addEventListener('click', function(e) {
+        const cartSidebar = document.getElementById('cartSidebar');
+        const cartBtn = document.getElementById('cartBtn');
+        
+        if (cartSidebar && cartBtn && !cartSidebar.contains(e.target) && !cartBtn.contains(e.target)) {
+            closeCart();
+        }
     });
 }
 
-function createProductCard(product) {
-    const discountPercent = Math.round(((product.actual_price - product.discount_price) / product.actual_price) * 100);
+// Load products into the grid
+function loadProducts(category = 'all', searchTerm = '') {
+    const productsGrid = document.getElementById('productsGrid');
+    const noResults = document.getElementById('noResults');
+    const sectionTitle = document.getElementById('sectionTitle');
     
-    return `
-        <div class="product-card fade-in" data-product-id="${product.id}">
-            <div class="product-card__header">
-                <h3 class="product-card__name">${product.name}</h3>
-                <div class="product-card__content">${product.content}</div>
-            </div>
-            
-            <div class="product-card__body">
-                <div class="product-card__pricing">
-                    <span class="product-card__price">₹${product.discount_price}</span>
-                    <span class="product-card__original-price">₹${product.actual_price}</span>
-                    <span class="product-card__discount">${discountPercent}% OFF</span>
+    if (!productsGrid || !noResults || !sectionTitle) return;
+    
+    currentProducts = [];
+    
+    // Collect products based on category
+    if (category === 'all') {
+        Object.keys(productData).forEach(cat => {
+            productData[cat].forEach(product => {
+                currentProducts.push({...product, category: cat});
+            });
+        });
+        sectionTitle.textContent = 'All Products';
+    } else {
+        if (productData[category]) {
+            productData[category].forEach(product => {
+                currentProducts.push({...product, category: category});
+            });
+        }
+        sectionTitle.textContent = category;
+    }
+
+    // Filter by search term - Fixed search logic
+    if (searchTerm) {
+        const searchTermLower = searchTerm.toLowerCase().trim();
+        currentProducts = currentProducts.filter(product => {
+            const nameMatch = product.name.toLowerCase().includes(searchTermLower);
+            const categoryMatch = product.category.toLowerCase().includes(searchTermLower);
+            const packageMatch = product.package && product.package.toLowerCase().includes(searchTermLower);
+            return nameMatch || categoryMatch || packageMatch;
+        });
+    }
+
+    // Display products or no results message
+    if (currentProducts.length === 0) {
+        productsGrid.style.display = 'none';
+        noResults.style.display = 'block';
+    } else {
+        productsGrid.style.display = 'grid';
+        noResults.style.display = 'none';
+        renderProducts();
+    }
+}
+
+// Render products in the grid
+function renderProducts() {
+    const productsGrid = document.getElementById('productsGrid');
+    if (!productsGrid) return;
+    
+    productsGrid.innerHTML = currentProducts.map((product, index) => {
+        const savings = product.actualPrice - product.discountPrice;
+        const savingsPercent = Math.round((savings / product.actualPrice) * 100);
+        
+        return `
+            <div class="product-card">
+                <div class="product-image">
+                   <img src="images/${product.image}" alt="${product.name}">
                 </div>
-                
-                <div class="product-card__actions">
-                    <div class="quantity-selector">
-                        <button class="quantity-btn quantity-decrease" data-product-id="${product.id}">-</button>
-                        <span class="quantity-display" id="qty-${product.id}">1</span>
-                        <button class="quantity-btn quantity-increase" data-product-id="${product.id}">+</button>
+                <h4 class="product-name">${product.name}</h4>
+                <p class="product-package">${product.package}</p>
+                <div class="product-pricing">
+                    <span class="original-price">₹${product.actualPrice}</span>
+                    <span class="discount-price">₹${product.discountPrice}</span>
+                    <div class="savings">Save ${savingsPercent}%</div>
+                </div>
+                <div class="product-actions">
+                    <div class="quantity-controls">
+                        <button class="quantity-btn" onclick="updateQuantity(${index}, -1)">-</button>
+                        <input type="number" class="quantity-input" id="qty-${index}" value="1" min="1" max="99">
+                        <button class="quantity-btn" onclick="updateQuantity(${index}, 1)">+</button>
                     </div>
-                    <button class="add-to-cart-btn" data-product-id="${product.id}">Add to Cart</button>
+                    <button class="add-to-cart-btn" onclick="addToCart(${index})">Add to Cart</button>
                 </div>
             </div>
-        </div>
-    `;
+        `;
+    }).join('');
 }
 
-function setupProductEventListeners(productId) {
-    const decreaseBtn = document.querySelector(`.quantity-decrease[data-product-id="${productId}"]`);
-    const increaseBtn = document.querySelector(`.quantity-increase[data-product-id="${productId}"]`);
-    const addToCartBtn = document.querySelector(`.add-to-cart-btn[data-product-id="${productId}"]`);
+// Handle search - Fixed search functionality
+function handleSearch() {
+    const searchInput = document.getElementById('searchInput');
+    if (!searchInput) return;
     
-    if (decreaseBtn) {
-        decreaseBtn.addEventListener('click', () => updateQuantity(productId, -1));
-    }
-    
-    if (increaseBtn) {
-        increaseBtn.addEventListener('click', () => updateQuantity(productId, 1));
-    }
-    
-    if (addToCartBtn) {
-        addToCartBtn.addEventListener('click', () => addToCart(productId));
-    }
+    const searchTerm = searchInput.value.trim();
+    console.log('Searching for:', searchTerm); // Debug log
+    loadProducts(currentCategory, searchTerm);
 }
 
-function updateQuantity(productId, change) {
-    const qtyDisplay = document.getElementById(`qty-${productId}`);
-    if (!qtyDisplay) return;
+// Handle category selection
+function selectCategory(category) {
+    currentCategory = category;
     
-    let currentQty = parseInt(qtyDisplay.textContent) || 1;
-    let newQty = Math.max(1, currentQty + change);
-    qtyDisplay.textContent = newQty;
+    // Update active category button
+    document.querySelectorAll('.category-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
     
-    // Update decrease button state
-    const decreaseBtn = document.querySelector(`.quantity-decrease[data-product-id="${productId}"]`);
-    if (decreaseBtn) {
-        decreaseBtn.disabled = newQty <= 1;
+    const activeBtn = document.querySelector(`[data-category="${category}"]`);
+    if (activeBtn) {
+        activeBtn.classList.add('active');
     }
+    
+    // Load products for selected category
+    const searchInput = document.getElementById('searchInput');
+    const searchTerm = searchInput ? searchInput.value.trim() : '';
+    loadProducts(category, searchTerm);
 }
 
-function addToCart(productId) {
-    const product = getAllProducts().find(p => p.id === productId);
+// Handle sorting
+function handleSort() {
+    const sortSelect = document.getElementById('sortSelect');
+    if (!sortSelect) return;
+    
+    const sortValue = sortSelect.value;
+    
+    switch (sortValue) {
+        case 'name':
+            currentProducts.sort((a, b) => a.name.localeCompare(b.name));
+            break;
+        case 'price-low':
+            currentProducts.sort((a, b) => a.discountPrice - b.discountPrice);
+            break;
+        case 'price-high':
+            currentProducts.sort((a, b) => b.discountPrice - a.discountPrice);
+            break;
+        case 'discount':
+            currentProducts.sort((a, b) => {
+                const discountA = ((a.actualPrice - a.discountPrice) / a.actualPrice) * 100;
+                const discountB = ((b.actualPrice - b.discountPrice) / b.actualPrice) * 100;
+                return discountB - discountA;
+            });
+            break;
+    }
+    
+    renderProducts();
+}
+
+// Update quantity in product card
+function updateQuantity(index, delta) {
+    const qtyInput = document.getElementById(`qty-${index}`);
+    if (!qtyInput) return;
+    
+    let currentQty = parseInt(qtyInput.value) || 1;
+    const newQty = Math.max(1, Math.min(99, currentQty + delta));
+    qtyInput.value = newQty;
+}
+
+// Add product to cart
+function addToCart(index) {
+    const product = currentProducts[index];
     if (!product) return;
     
-    const qtyDisplay = document.getElementById(`qty-${productId}`);
-    const quantity = parseInt(qtyDisplay.textContent) || 1;
+    const qtyInput = document.getElementById(`qty-${index}`);
+    const quantity = qtyInput ? parseInt(qtyInput.value) || 1 : 1;
     
     // Check if product already exists in cart
-    const existingItem = cart.find(item => item.id === productId);
+    const existingItem = cart.find(item => 
+        item.name === product.name && item.category === product.category
+    );
     
     if (existingItem) {
         existingItem.quantity += quantity;
     } else {
         cart.push({
             ...product,
-            quantity: quantity
+            quantity: quantity,
+            id: Date.now() + Math.random()
         });
+    }
+    
+    // Reset quantity input
+    if (qtyInput) {
+        qtyInput.value = 1;
     }
     
     updateCartDisplay();
     showNotification(`${product.name} added to cart!`, 'success');
-    
-    // Reset quantity to 1
-    qtyDisplay.textContent = '1';
-    const decreaseBtn = document.querySelector(`.quantity-decrease[data-product-id="${productId}"]`);
-    if (decreaseBtn) {
-        decreaseBtn.disabled = true;
-    }
-
-    // Animate add to cart button
-    const addToCartBtn = document.querySelector(`.add-to-cart-btn[data-product-id="${productId}"]`);
-    if (addToCartBtn) {
-        const originalText = addToCartBtn.textContent;
-        addToCartBtn.textContent = 'Added!';
-        addToCartBtn.style.background = '#28a745';
-        
-        setTimeout(() => {
-            addToCartBtn.textContent = originalText;
-            addToCartBtn.style.background = '';
-        }, 1000);
-    }
 }
 
+// Update cart display
 function updateCartDisplay() {
-    // Update cart count
+    const cartCount = document.getElementById('cartCount');
+    const cartItems = document.getElementById('cartItems');
+    const cartEmpty = document.getElementById('cartEmpty');
+    const cartSummary = document.getElementById('cartSummary');
+    
+    if (!cartCount || !cartItems || !cartEmpty || !cartSummary) return;
+    
     const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    if (cartCount) {
-        cartCount.textContent = totalItems;
-        cartCount.style.display = totalItems > 0 ? 'block' : 'none';
-    }
+    cartCount.textContent = totalItems;
     
-    // Update cart items
-    if (cartItems) {
-        if (cart.length === 0) {
-            cartItems.innerHTML = `
-                <div class="cart-empty">
-                    <p>Your cart is empty</p>
-                    <p>Add some products to get started!</p>
+    if (cart.length === 0) {
+        cartItems.style.display = 'none';
+        cartEmpty.style.display = 'block';
+        cartSummary.style.display = 'none';
+    } else {
+        cartItems.style.display = 'block';
+        cartEmpty.style.display = 'none';
+        cartSummary.style.display = 'block';
+        
+        // Render cart items
+        cartItems.innerHTML = cart.map(item => `
+            <div class="cart-item">
+                <div class="cart-item-header">
+                    <div class="cart-item-name">${item.name}</div>
+                    <button class="cart-item-remove" onclick="removeFromCart('${item.id}')">Remove</button>
                 </div>
-            `;
-        } else {
-            cartItems.innerHTML = cart.map(item => createCartItem(item)).join('');
-            
-            // Add event listeners to cart item buttons
-            cart.forEach(item => {
-                setupCartItemEventListeners(item.id);
-            });
-        }
-    }
-    
-    // Update totals
-    calculateCartTotals();
-}
-
-function createCartItem(item) {
-    return `
-        <div class="cart-item" data-item-id="${item.id}">
-            <div class="cart-item__details">
-                <div class="cart-item__name">${item.name}</div>
-                <div class="cart-item__price">₹${item.discount_price} each</div>
+                <div class="cart-item-controls">
+                    <div class="cart-item-quantity">
+                        <button class="quantity-btn" onclick="updateCartItemQuantity('${item.id}', -1)">-</button>
+                        <span>${item.quantity}</span>
+                        <button class="quantity-btn" onclick="updateCartItemQuantity('${item.id}', 1)">+</button>
+                    </div>
+                    <div class="cart-item-price">₹${item.discountPrice * item.quantity}</div>
+                </div>
             </div>
-            
-            <div class="cart-item__quantity">
-                <button class="quantity-btn cart-qty-decrease" data-item-id="${item.id}">-</button>
-                <span class="quantity-display">${item.quantity}</span>
-                <button class="quantity-btn cart-qty-increase" data-item-id="${item.id}">+</button>
-            </div>
-            
-            <button class="cart-item__remove" data-item-id="${item.id}">×</button>
-        </div>
-    `;
-}
-
-function setupCartItemEventListeners(itemId) {
-    const decreaseBtn = document.querySelector(`.cart-qty-decrease[data-item-id="${itemId}"]`);
-    const increaseBtn = document.querySelector(`.cart-qty-increase[data-item-id="${itemId}"]`);
-    const removeBtn = document.querySelector(`.cart-item__remove[data-item-id="${itemId}"]`);
-    
-    if (decreaseBtn) {
-        decreaseBtn.addEventListener('click', () => updateCartItemQuantity(itemId, -1));
-    }
-    
-    if (increaseBtn) {
-        increaseBtn.addEventListener('click', () => updateCartItemQuantity(itemId, 1));
-    }
-    
-    if (removeBtn) {
-        removeBtn.addEventListener('click', () => removeFromCart(itemId));
+        `).join('');
+        
+        // Update summary
+        updateCartSummary();
     }
 }
 
-function updateCartItemQuantity(itemId, change) {
-    const item = cart.find(item => item.id === itemId);
-    if (!item) return;
+// Update cart summary
+function updateCartSummary() {
+    const subtotalEl = document.getElementById('subtotal');
+    const originalPriceEl = document.getElementById('originalPrice');
+    const savingsEl = document.getElementById('savings');
+    const totalPriceEl = document.getElementById('totalPrice');
     
-    item.quantity = Math.max(1, item.quantity + change);
-    updateCartDisplay();
+    if (!subtotalEl || !originalPriceEl || !savingsEl || !totalPriceEl) return;
+    
+    const subtotal = cart.reduce((sum, item) => sum + (item.discountPrice * item.quantity), 0);
+    const originalTotal = cart.reduce((sum, item) => sum + (item.actualPrice * item.quantity), 0);
+    const savings = originalTotal - subtotal;
+    
+    subtotalEl.textContent = `₹${subtotal}`;
+    originalPriceEl.textContent = `₹${originalTotal}`;
+    savingsEl.textContent = `₹${savings}`;
+    totalPriceEl.textContent = `₹${subtotal}`;
 }
 
+// Update cart item quantity
+function updateCartItemQuantity(itemId, delta) {
+    const item = cart.find(cartItem => cartItem.id == itemId);
+    if (item) {
+        item.quantity = Math.max(1, item.quantity + delta);
+        updateCartDisplay();
+    }
+}
+
+// Remove item from cart
 function removeFromCart(itemId) {
-    cart = cart.filter(item => item.id !== itemId);
+    cart = cart.filter(item => item.id != itemId);
     updateCartDisplay();
     showNotification('Item removed from cart', 'info');
 }
 
-function calculateCartTotals() {
-    const subtotal = cart.reduce((sum, item) => sum + (item.actual_price * item.quantity), 0);
-    const total = cart.reduce((sum, item) => sum + (item.discount_price * item.quantity), 0);
-    const discount = subtotal - total;
-    
-    if (cartSubtotal) cartSubtotal.textContent = `₹${subtotal}`;
-    if (cartDiscount) cartDiscount.textContent = `₹${discount}`;
-    if (cartTotal) cartTotal.textContent = `₹${total}`;
-    
-    // Update checkout button state
-    const checkoutBtn = document.getElementById('checkoutBtn');
-    if (checkoutBtn) {
-        checkoutBtn.disabled = cart.length === 0;
-        checkoutBtn.textContent = cart.length === 0 ? 'Cart is Empty' : 'Proceed to Order';
-    }
+// Clear entire cart
+function clearCart() {
+    cart = [];
+    updateCartDisplay();
+    showNotification('Cart cleared', 'info');
 }
 
-function handleSearch(e) {
-    searchTerm = e.target.value.trim();
-    
-    // If user is searching, automatically switch to "All Products" to show all search results
-    if (searchTerm && currentCategory !== 'all') {
-        currentCategory = 'all';
-        
-        // Update active tab to "All Products"
-        filterTabs.forEach(tab => {
-            tab.classList.toggle('filter-tab--active', tab.dataset.category === 'all');
-        });
-    }
-    
-    renderProducts();
-}
-
-function handleCategoryFilter(category) {
-    currentCategory = category;
-    
-    // Clear search when switching categories manually
-    if (searchInput) {
-        searchInput.value = '';
-        searchTerm = '';
-    }
-    
-    // Update active tab
-    filterTabs.forEach(tab => {
-        tab.classList.toggle('filter-tab--active', tab.dataset.category === category);
-    });
-    
-    renderProducts();
-}
-
-function toggleCartSidebar() {
+// Toggle cart sidebar
+function toggleCart() {
+    const cartSidebar = document.getElementById('cartSidebar');
     if (cartSidebar) {
-        cartSidebar.classList.toggle('cart-sidebar--open');
+        cartSidebar.classList.toggle('open');
     }
 }
 
-function closeCartSidebar() {
+// Close cart sidebar
+function closeCart() {
+    const cartSidebar = document.getElementById('cartSidebar');
     if (cartSidebar) {
-        cartSidebar.classList.remove('cart-sidebar--open');
+        cartSidebar.classList.remove('open');
     }
 }
 
-function openOrderModal() {
+// Open checkout modal - Fixed modal opening
+function openCheckout() {
     if (cart.length === 0) {
-        showNotification('Please add items to cart first', 'warning');
+        showNotification('Your cart is empty!', 'error');
         return;
     }
     
-    if (orderModal) {
-        orderModal.classList.remove('hidden');
-        populateOrderSummary();
-    }
+    const modal = document.getElementById('checkoutModal');
+    const overlay = document.getElementById('overlay');
+    
+    if (!modal || !overlay) return;
+    
+    // Update checkout summary
+    updateCheckoutSummary();
+    
+    // Show modal and overlay
+    modal.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    
+    console.log('Checkout modal opened'); // Debug log
 }
 
-function closeOrderModal() {
-    if (orderModal) {
-        orderModal.classList.add('hidden');
-    }
-}
-
-function populateOrderSummary() {
-    const orderSummaryItems = document.getElementById('orderSummaryItems');
-    const orderItemsTotal = document.getElementById('orderItemsTotal');
-    const orderDiscount = document.getElementById('orderDiscount');
-    const orderFinalTotal = document.getElementById('orderFinalTotal');
+// Close checkout modal - Enhanced implementation
+function closeCheckout() {
+    const modal = document.getElementById('checkoutModal');
+    const overlay = document.getElementById('overlay');
     
-    if (orderSummaryItems) {
-        orderSummaryItems.innerHTML = cart.map(item => `
-            <div class="order-summary__item">
-                <span class="order-summary__item-name">${item.name}</span>
-                <span class="order-summary__item-qty">×${item.quantity}</span>
-                <span class="order-summary__item-price">₹${item.discount_price * item.quantity}</span>
-            </div>
-        `).join('');
+    if (modal) {
+        modal.classList.add('hidden');
+    }
+    if (overlay) {
+        overlay.classList.add('hidden');
     }
     
-    const subtotal = cart.reduce((sum, item) => sum + (item.actual_price * item.quantity), 0);
-    const total = cart.reduce((sum, item) => sum + (item.discount_price * item.quantity), 0);
-    const discount = subtotal - total;
-    
-    if (orderItemsTotal) orderItemsTotal.textContent = `₹${subtotal}`;
-    if (orderDiscount) orderDiscount.textContent = `₹${discount}`;
-    if (orderFinalTotal) orderFinalTotal.textContent = `₹${total}`;
+    document.body.style.overflow = 'auto';
+    console.log('Checkout modal closed'); // Debug log
 }
 
-function handleOrderSubmission(e) {
+// Update checkout summary
+function updateCheckoutSummary() {
+    const checkoutItems = document.getElementById('checkoutItems');
+    const checkoutItemCount = document.getElementById('checkoutItemCount');
+    const checkoutTotal = document.getElementById('checkoutTotal');
+    
+    if (!checkoutItems || !checkoutItemCount || !checkoutTotal) return;
+    
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const totalAmount = cart.reduce((sum, item) => sum + (item.discountPrice * item.quantity), 0);
+    
+    checkoutItems.innerHTML = cart.map(item => `
+        <div class="checkout-item">
+            <span>${item.name} (${item.quantity}x)</span>
+            <span>₹${item.discountPrice * item.quantity}</span>
+        </div>
+    `).join('');
+    
+    checkoutItemCount.textContent = totalItems;
+    checkoutTotal.textContent = `₹${totalAmount}`;
+}
+
+// Handle order submission
+function handleOrder(e) {
     e.preventDefault();
     
-    const formData = new FormData(orderForm);
+    const customerName = document.getElementById('customerName').value.trim();
+    const customerPhone = document.getElementById('customerPhone').value.trim();
+    const customerEmail = document.getElementById('customerEmail').value.trim();
+    const deliveryAddress = document.getElementById('deliveryAddress').value.trim();
+    const deliveryState = document.getElementById('deliveryState').value;
+    const paymentMethod = document.getElementById('paymentMethod').value;
+    
     const orderData = {
-        customer: {
-            name: formData.get('customerName'),
-            phone: formData.get('customerPhone'),
-            email: formData.get('customerEmail'),
-            address: formData.get('deliveryAddress'),
-            city: formData.get('city'),
-            pincode: formData.get('pincode')
-        },
-        payment: formData.get('paymentMethod'),
-        items: cart,
-        totals: {
-            subtotal: cart.reduce((sum, item) => sum + (item.actual_price * item.quantity), 0),
-            discount: cart.reduce((sum, item) => sum + (item.actual_price * item.quantity), 0) - cart.reduce((sum, item) => sum + (item.discount_price * item.quantity), 0),
-            total: cart.reduce((sum, item) => sum + (item.discount_price * item.quantity), 0)
-        }
+        customerName,
+        customerPhone,
+        customerEmail,
+        deliveryAddress,
+        deliveryState,
+        paymentMethod,
+        items: [...cart],
+        totalAmount: cart.reduce((sum, item) => sum + (item.discountPrice * item.quantity), 0),
+        orderDate: new Date().toISOString()
     };
     
     // Validate required fields
-    if (!orderData.customer.name || !orderData.customer.phone || !orderData.customer.address || !orderData.customer.city || !orderData.customer.pincode) {
-        showNotification('Please fill in all required fields', 'error');
+    if (!customerName || !customerPhone || !deliveryAddress || !deliveryState || !paymentMethod) {
+        showNotification('Please fill all required fields', 'error');
         return;
     }
     
     // Validate phone number
-    const phoneRegex = /^[6-9]\d{9}$/;
-    if (!phoneRegex.test(orderData.customer.phone.replace(/\D/g, ''))) {
+    const phoneDigits = customerPhone.replace(/\D/g, '');
+    if (!validatePhone(phoneDigits)) {
         showNotification('Please enter a valid 10-digit phone number', 'error');
         return;
     }
     
-    // Show loading state
-    const submitBtn = orderForm.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    submitBtn.innerHTML = '<span class="loading"></span> Processing...';
-    submitBtn.disabled = true;
+    // Validate email if provided
+    if (customerEmail && !validateEmail(customerEmail)) {
+        showNotification('Please enter a valid email address', 'error');
+        return;
+    }
     
     // Simulate order processing
+    const submitBtn = e.target.querySelector('button[type="submit"]');
+    if (!submitBtn) return;
+    
+    const originalText = submitBtn.textContent;
+    
+    submitBtn.textContent = 'Processing Order...';
+    submitBtn.disabled = true;
+    
     setTimeout(() => {
-        showOrderConfirmation(orderData);
-        closeOrderModal();
-        clearCart();
+        showNotification('Order placed successfully! We will call you soon for confirmation and payment details.', 'success');
+        
+        // Clear cart and close modal
+        cart = [];
+        updateCartDisplay();
+        closeCart();
+        closeCheckout();
         
         // Reset form
-        orderForm.reset();
+        e.target.reset();
+        
+        // Reset button
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
     }, 2000);
-}
-
-function showOrderConfirmation(orderData) {
-    const paymentInfo = orderData.payment === 'googlepay' 
-        ? `Google Pay: ${productData.payment_info.google_pay}`
-        : `Bank: ${productData.payment_info.bank.name}\nAccount: ${productData.payment_info.bank.account}\nIFSC: ${productData.payment_info.bank.ifsc}`;
-    
-    showNotification(
-        `Order placed successfully! Total: ₹${orderData.totals.total}\n\nWe will call you at ${orderData.customer.phone} for confirmation.\n\nPayment Details:\n${paymentInfo}`,
-        'success'
-    );
-}
-
-function clearCart() {
-    cart = [];
-    updateCartDisplay();
-    closeCartSidebar();
-}
-
-function toggleMobileMenu() {
-    // Mobile menu functionality if needed
-    console.log('Mobile menu toggle');
 }
 
 // Notification system
@@ -663,67 +659,63 @@ function showNotification(message, type = 'info') {
                 right: 20px;
                 z-index: 10000;
                 max-width: 400px;
-                border-radius: 8px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+                border-radius: var(--radius-base);
+                box-shadow: var(--shadow-lg);
                 animation: slideInRight 0.3s ease-out;
                 font-family: var(--font-family-base);
             }
 
             .notification--success {
-                background: rgba(40, 167, 69, 0.9);
-                border: 1px solid rgba(40, 167, 69, 1);
-                color: white;
+                background: rgba(50, 184, 198, 0.15);
+                border: 1px solid rgba(50, 184, 198, 0.25);
+                color: #32B8C6;
             }
 
             .notification--error {
-                background: rgba(220, 53, 69, 0.9);
-                border: 1px solid rgba(220, 53, 69, 1);
-                color: white;
+                background: rgba(220, 20, 60, 0.15);
+                border: 1px solid rgba(220, 20, 60, 0.25);
+                color: #DC143C;
             }
 
             .notification--warning {
-                background: rgba(255, 193, 7, 0.9);
-                border: 1px solid rgba(255, 193, 7, 1);
-                color: #333;
+                background: rgba(255, 165, 0, 0.15);
+                border: 1px solid rgba(255, 165, 0, 0.25);
+                color: #FFA500;
             }
 
             .notification--info {
-                background: rgba(23, 162, 184, 0.9);
-                border: 1px solid rgba(23, 162, 184, 1);
-                color: white;
+                background: rgba(255, 107, 53, 0.15);
+                border: 1px solid rgba(255, 107, 53, 0.25);
+                color: #FF6B35;
             }
 
             .notification__content {
                 display: flex;
-                align-items: flex-start;
-                padding: 16px;
-                gap: 12px;
+                align-items: center;
+                padding: var(--space-16);
+                gap: var(--space-12);
             }
 
             .notification__icon {
                 font-weight: bold;
-                font-size: 18px;
+                font-size: var(--font-size-lg);
                 flex-shrink: 0;
-                margin-top: 2px;
             }
 
             .notification__message {
                 flex: 1;
-                font-weight: 500;
-                white-space: pre-line;
-                line-height: 1.4;
+                font-weight: var(--font-weight-medium);
             }
 
             .notification__close {
                 background: none;
                 border: none;
-                font-size: 20px;
+                font-size: var(--font-size-xl);
                 cursor: pointer;
-                opacity: 0.8;
-                transition: opacity 0.15s;
+                opacity: 0.7;
+                transition: opacity var(--duration-fast);
                 color: inherit;
                 flex-shrink: 0;
-                margin-top: -2px;
             }
 
             .notification__close:hover {
@@ -741,20 +733,9 @@ function showNotification(message, type = 'info') {
                 }
             }
 
-            @keyframes slideOutRight {
-                from {
-                    transform: translateX(0);
-                    opacity: 1;
-                }
-                to {
-                    transform: translateX(100%);
-                    opacity: 0;
-                }
-            }
-
             @media (max-width: 480px) {
                 .notification {
-                    top: 80px;
+                    top: 100px;
                     left: 20px;
                     right: 20px;
                     max-width: none;
@@ -773,24 +754,16 @@ function showNotification(message, type = 'info') {
 
     // Close functionality
     const closeButton = notification.querySelector('.notification__close');
-    closeButton.addEventListener('click', () => {
-        notification.style.animation = 'slideOutRight 0.3s ease-out forwards';
-        setTimeout(() => {
-            if (notification.parentNode) {
-                notification.remove();
-            }
-        }, 300);
-    });
+    if (closeButton) {
+        closeButton.addEventListener('click', () => {
+            notification.remove();
+        });
+    }
 
     // Auto remove after 5 seconds
     setTimeout(() => {
         if (notification.parentNode) {
-            notification.style.animation = 'slideOutRight 0.3s ease-out forwards';
-            setTimeout(() => {
-                if (notification.parentNode) {
-                    notification.remove();
-                }
-            }, 300);
+            notification.remove();
         }
     }, 5000);
 }
@@ -806,37 +779,7 @@ function validatePhone(phone) {
 }
 
 function validateEmail(email) {
+    if (!email) return true; // Email is optional
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
-
-// Close cart sidebar when clicking outside
-document.addEventListener('click', function(e) {
-    if (cartSidebar && cartSidebar.classList.contains('cart-sidebar--open')) {
-        if (!cartSidebar.contains(e.target) && !e.target.closest('#cartIcon')) {
-            closeCartSidebar();
-        }
-    }
-});
-
-// Keyboard shortcuts
-document.addEventListener('keydown', function(e) {
-    // Escape key to close modals
-    if (e.key === 'Escape') {
-        if (orderModal && !orderModal.classList.contains('hidden')) {
-            closeOrderModal();
-        } else if (cartSidebar && cartSidebar.classList.contains('cart-sidebar--open')) {
-            closeCartSidebar();
-        }
-    }
-    
-    // Ctrl/Cmd + K to focus search
-    if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-        e.preventDefault();
-        if (searchInput) {
-            searchInput.focus();
-        }
-    }
-});
-
-console.log('Powerhouse Crackers ordering system loaded successfully!');
