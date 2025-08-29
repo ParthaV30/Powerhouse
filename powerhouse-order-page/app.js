@@ -648,11 +648,14 @@ function completeOrder() {
     // clear cart etc.
 }
 // Handle order submission
-// const checkoutForm = document.getElementById('checkoutForm');
+
+// Attach event listener to checkout form
+const checkoutForm = document.getElementById('checkoutForm');
 if (checkoutForm) {
     checkoutForm.addEventListener('submit', handleOrder);
 }
 
+// Handle Order
 async function handleOrder(e) {
     e.preventDefault();
     
@@ -661,77 +664,194 @@ async function handleOrder(e) {
     const customerEmail = document.getElementById('customerEmail').value.trim();
     const deliveryAddress = document.getElementById('deliveryAddress').value.trim();
     const deliveryState = document.getElementById('deliveryState').value;
-    const paymentMethod = document.getElementById('paymentMethod').value;
+    
+    // Generate Unique Order ID
+    const orderId = `ORD-${Date.now()}-${Math.floor(Math.random() * 1000)}`;
     
     const orderData = {
+        orderId,
         customerName,
         customerPhone,
         customerEmail,
         deliveryAddress,
         deliveryState,
-        paymentMethod,
-        items: [...cart],  // assumes cart is globally available
+        items: [...cart],  // assumes cart is global
         totalAmount: cart.reduce((sum, item) => sum + (item.discountPrice * item.quantity), 0),
-        orderDate: new Date().toISOString()
+        orderDate: new Date().toLocaleString()
     };
     
-    // ✅ Validate required fields
-    if (!customerName || !customerPhone || !deliveryAddress || !deliveryState || !paymentMethod) {
-        showNotification('Please fill all required fields', 'error');
+    //  Validation for required fields
+    if (!customerName || !customerPhone || !deliveryAddress || !deliveryState) {
+        alert('⚠️ Please fill all required fields');
         return;
     }
     
-    // ✅ Validate phone number
     const phoneDigits = customerPhone.replace(/\D/g, '');
-    if (!validatePhone(phoneDigits)) {
-        showNotification('Please enter a valid 10-digit phone number', 'error');
+    if (phoneDigits.length !== 10) {
+        alert('⚠️ Please enter a valid 10-digit phone number');
         return;
     }
     
-    // ✅ Validate email (optional)
-    if (customerEmail && !validateEmail(customerEmail)) {
-        showNotification('Please enter a valid email address', 'error');
+    if (customerEmail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(customerEmail)) {
+        alert('⚠️ Please enter a valid email address');
         return;
     }
     
-    // ✅ Submit button state
     const submitBtn = e.target.querySelector('button[type="submit"]');
     if (!submitBtn) return;
-    
     const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Processing Order...';
+    submitBtn.textContent = 'Processing...';
     submitBtn.disabled = true;
     
     try {
-        // ✅ Send order to Formspree
-        const response = await fetch("https://formspree.io/f/xqadkyan", {
+        //  Send order to email using Formspree email api
+        await fetch("https://formspree.io/f/xqadkyan", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(orderData)
         });
 
-        if (response.ok) {
-            showNotification('✅ Order placed successfully! We will call you soon for confirmation and payment details.', 'success');
-            
-            // Clear cart & close modal
-            cart = [];
-            updateCartDisplay();
-            closeCart();
-            closeCheckout();
-            
-            // Reset form
-            e.target.reset();
-        } else {
-            showNotification('⚠️ Failed to place order. Please try again.', 'error');
-        }
+        // To generate PDF Quotation using jsPDF
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+
+        doc.setFontSize(18);
+        doc.text("Order Quotation", 14, 20);
+
+        doc.setFontSize(12);
+        doc.text(`Order ID: ${orderId}`, 14, 28);
+        doc.text(`Name: ${customerName}`, 14, 36);
+        doc.text(`Phone: ${customerPhone}`, 14, 43);
+        doc.text(`Email: ${customerEmail || "N/A"}`, 14, 50);
+        doc.text(`Address: ${deliveryAddress}`, 14, 57);
+        doc.text(`State: ${deliveryState}`, 14, 64);
+        doc.text(`Payment: ${paymentMethod}`, 14, 71);
+        doc.text(`Date: ${orderData.orderDate}`, 14, 78);
+
+        // Table data
+        const tableData = orderData.items.map(item => [
+            item.name, item.quantity, `₹${item.discountPrice}`, `₹${item.quantity * item.discountPrice}`
+        ]);
+
+        doc.autoTable({
+            head: [['Item', 'Qty', 'Price', 'Total']],
+            body: tableData,
+            startY: 85
+        });
+
+        doc.text(`Grand Total: ₹${orderData.totalAmount}`, 14, doc.lastAutoTable.finalY + 10);
+
+        // Download the Quotation PDF
+        doc.save(`Quotation_${orderId}.pdf`);
+
+        // Redirect to WhatsApp with Prefilled Order Data
+        const merchantNumber = "917904399942"; 
+        const waMessage = `Hello, I have placed an order.\n\nOrder ID: ${orderId}\nName: ${customerName}\nPhone: ${customerPhone}\nTotal: ₹${orderData.totalAmount}\n\nI have received the quotation PDF.`;
+        const waLink = `https://wa.me/${merchantNumber}?text=${encodeURIComponent(waMessage)}`;
+        window.open(waLink, "_blank");
+
+        alert('Order placed! Quotation downloaded. Redirecting to WhatsApp...');
+
+        // Clear the cart so after the order new cart items can be ordered for next order
+        cart = [];
+        updateCartDisplay();
+        e.target.reset();
+
     } catch (err) {
-        showNotification('🚨 Network error. Please check your connection.', 'error');
+        console.error(err);
+        alert('Error occurred! Please try again.');
     }
     
-    // ✅ Reset button
     submitBtn.textContent = originalText;
     submitBtn.disabled = false;
 }
+
+
+
+
+// if (checkoutForm) {
+//     checkoutForm.addEventListener('submit', handleOrder);
+// }
+
+// async function handleOrder(e) {
+//     e.preventDefault();
+    
+//     const customerName = document.getElementById('customerName').value.trim();
+//     const customerPhone = document.getElementById('customerPhone').value.trim();
+//     const customerEmail = document.getElementById('customerEmail').value.trim();
+//     const deliveryAddress = document.getElementById('deliveryAddress').value.trim();
+//     const deliveryState = document.getElementById('deliveryState').value;
+//     const paymentMethod = document.getElementById('paymentMethod').value;
+    
+//     const orderData = {
+//         customerName,
+//         customerPhone,
+//         customerEmail,
+//         deliveryAddress,
+//         deliveryState,
+//         paymentMethod,
+//         items: [...cart],  // assumes cart is globally available
+//         totalAmount: cart.reduce((sum, item) => sum + (item.discountPrice * item.quantity), 0),
+//         orderDate: new Date().toISOString()
+//     };
+    
+//     // ✅ Validate required fields
+//     if (!customerName || !customerPhone || !deliveryAddress || !deliveryState || !paymentMethod) {
+//         showNotification('Please fill all required fields', 'error');
+//         return;
+//     }
+    
+//     // ✅ Validate phone number
+//     const phoneDigits = customerPhone.replace(/\D/g, '');
+//     if (!validatePhone(phoneDigits)) {
+//         showNotification('Please enter a valid 10-digit phone number', 'error');
+//         return;
+//     }
+    
+//     // ✅ Validate email (optional)
+//     if (customerEmail && !validateEmail(customerEmail)) {
+//         showNotification('Please enter a valid email address', 'error');
+//         return;
+//     }
+    
+//     // ✅ Submit button state
+//     const submitBtn = e.target.querySelector('button[type="submit"]');
+//     if (!submitBtn) return;
+    
+//     const originalText = submitBtn.textContent;
+//     submitBtn.textContent = 'Processing Order...';
+//     submitBtn.disabled = true;
+    
+//     try {
+//         // ✅ Send order to Formspree
+//         const response = await fetch("https://formspree.io/f/xqadkyan", {
+//             method: "POST",
+//             headers: { "Content-Type": "application/json" },
+//             body: JSON.stringify(orderData)
+//         });
+
+//         if (response.ok) {
+//             showNotification('✅ Order placed successfully! We will call you soon for confirmation and payment details.', 'success');
+            
+//             // Clear cart & close modal
+//             cart = [];
+//             updateCartDisplay();
+//             closeCart();
+//             closeCheckout();
+            
+//             // Reset form
+//             e.target.reset();
+//         } else {
+//             showNotification('⚠️ Failed to place order. Please try again.', 'error');
+//         }
+//     } catch (err) {
+//         showNotification('🚨 Network error. Please check your connection.', 'error');
+//     }
+    
+//     // ✅ Reset button
+//     submitBtn.textContent = originalText;
+//     submitBtn.disabled = false;
+// }
 
 // Notification system
 function showNotification(message, type = 'info') {
